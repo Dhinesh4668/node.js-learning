@@ -15,3 +15,11 @@ fs.writeFile('../data/readfile.txt', writeText ,err=>{
     console.error(err);
   }
 })
+
+// create directory
+fs.mkdir('./assets', err =>{
+  if(err) {
+    console.error(err);
+  }
+  console.log('file was created');
+})
