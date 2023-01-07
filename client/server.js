@@ -1,23 +1,37 @@
 const http = require('http');
 
 const fs = require('fs')
-
+const port = '3000'
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
+
+
+
     res.setHeader('content-type', 'html')
-    fs.readFile('./index.html', 'utf-8', (err, data) => {
+
+    let path = './page/';
+    switch (req.url) {
+        case '/':
+            path += 'index.html'
+            break;
+    
+        default:
+            path += '404.html' 
+            break;
+    }
+
+    fs.readFile('./page/index.html', 'utf-8', (err, data) => {
         if (err) {
             console.error(err);
         } else {
-            res.write(data)
-            res.end();
+            res.end(data)
         }
     })
 
 })
 
-server.listen(5000, 'localhost', () => {
-    console.log('listning the localhost:3000');
+server.listen(port, 'localhost', () => {
+    console.log(`listning the https://localhost:${port}`);
 })
 
 
