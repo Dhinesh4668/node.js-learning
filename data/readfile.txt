@@ -1,1 +1,132 @@
-hai
+What Developers Hate in API Documentation
+The dev community is a passionate one. It’s specifically passionate about the things they don’t like. If they don’t like an API, it’s most of the time because of junky docs, even if the product is actually great. Here are some common issues devs have with API docs.
+
+It’s not written using simple human language. This is a common problem for auto-generated docs or docs that are neglected by creators. Although many documentation generation tools are doing a great job at commenting on the code, they cannot replace actual explanations in English written by a developer or technical writer.
+
+It has very few code samples. This is another end of the spectrum where explanations are abundant, but there are minimal examples of the actual code.
+
+It’s available only to registered users. This not-so-slick maneuver does nothing for your marketing. It only frustrates the people who want to know what your API does before deciding if they want it (as any sane person would).
+
+It’s too long/can’t be found/inaccurate/hasn’t been updated in years, etc. Creating good docs is almost as important as building a good API. Because poorly written docs or the ones that can’t be found by simply googling “Product API” are failing the whole development effort. If you’re interested, we’ve already outlined specifics of technical documentation in general. But API docs deserve a dedicated article. So how do you write great API docs?
+
+Adopt spec-driven development
+Spec-driven development (SDD) is similar to test-driven development in which you write test cases for each feature and then write code that should pass them. In SDD, you create docs or at least some parts of it in parallel with building an API, often following a certain API description format called a specification.
+
+An API specification is like a template of your future docs, the unified language that describes the design of your API, explains how it functions and what to expect from it. There are a few specifications, such as RAML (RESTful API Modeling Language), OpenAPI (formerly Swagger), and API Blueprint, but there’s a trend going on for combining all specs under the hood of OpenAPI.
+
+These specs have prebuilt documentation tools that allow for writing and managing your docs. For example, API Console automatically generates docs from RAML and OpenAPI formats and helps you run it on your existing web application or as a standalone app.
+
+api console
+API Console lets you build a web portal for your API docs from RAML and OpenAPI specifications
+Source: Pawel Psztyc
+
+Alternative to traditional API doc solutions like WordPress or Drupal CMSs, API spec products are open source, created by the dev community for the dev community, have parsers in different programming languages, and constant creator support.
+
+Write for the entry level
+There’s a reason technical documentation is usually not written by developers themselves – it’s the job of technical writers, experts in translating tech aspects into a readable format. But even technical writers tend to leak a bit of jargon into the text.
+
+An API as any software product is created for a specific audience. But the audience for documentation is vast. There are three main groups of documentation users:
+
+developers who will intimately interact with the docs
+decision-makers like CTOs and solution architects who want to determine whether your API will be a good fit quickly
+observers like journalists, tech writers, and even competitors who won’t necessarily use your API ever.
+And even within each of these groups, there are people of different skills, roles, and needs, and all of them should have a positive experience with the docs. How do you target them all? By targeting the least experienced users. So, how do you write docs for a newcomer?
+
+Start with the opportunities rather than technicalities. Greet users with a compelling story telling how your API can enrich their product or make developers’ lives tenfold easier.
+
+alexa apis
+Amazon Alexa API docs start with explaining what Alexa does and what benefit it can bring to the client
+
+Show where to start. API docs are notorious for being too overwhelming and assuming that users have vast experience with APIs. The getting started section is obligatory, and it should be written with patience for a potential user.
+
+facebook apis
+Facebook provides a clear reference for beginners and follows the getting started process step by step
+
+Create instructions for the most common use cases. You probably already know what functions people use your API for. Create separate sections addressing them and include sample messages there.
+
+Use a conversational tone. The developer community is laidback and informal, so they won’t appreciate dry corporate language even if it sounds more “professional.” Good docs always talk to humans.
+
+Educate on external tools. If your API requires the use and understanding of third-party products and concepts like OAuth or npm, include links to docs or installation guides.
+
+Make it easy to learn. API docs are not IKEA assembly instructions,;they are the learning source. Enrich your documentation with FAQs, tutorials, blogs, and even videos when possible.
+
+Incorporate must-have sections
+In 2019, SmartBear, the developer of Swagger, surveyed API developers and users. They found what docs features are considered the most important in the community, giving us a list of the must-have documentation sections devs want to cover. We’ll go through some of them.
+
+api documentation features
+SmartBear surveyed 3,000 API practitioners
+
+Examples. Examples are usually presented as pieces of code, which are useful enough but can be made even more practical. For example, including a transcript of fields like it’s done in Medium docs or even creating a mock API for developers to test and use by making real calls. Mock APIs can be easily shared via a URL or on GitHub, and if done to a certain level of detail, even used in the final product.
+
+Status and errors. There are standard status codes and those specific to your API ones. It’s a good idea to include all errors that can be triggered by your API. Errors are often put on a dedicated page of the docs, but it makes sense to duplicate some of them directly under the endpoint where they surface the most.
+
+Authentication. Most API docs start with authentication and authorization. It should cover info on how to get an API key and how to authenticate requests, including possible errors, token expiration times, and an explanation on authentication sensitivity (basically reminding that keys can’t be shared, and where they can be used).
+
+HTTP requests. Providing web requests in HTTP is the bare minimum for documentation. It’s usually assumed that devs will know how to send HTTP requests in their language of choice, but sometimes, API creators include requests in various languages. This can be done automatically via API spec tools and API management tools like Postman.
+
+Use industry-standard layout
+If you’re using a documentation generator, the layout is already decided for you. Most API docs look and feel the same. If you’ve used a few ones, you know how to approach new docs. Still, organizing large volumes of data, making it findable and easy to navigate is a complex task. Here are some features of the most functional layout.
+
+Dynamic layout. You can recognize an outdated API by its static documentation. A single page or even a PDF document doesn’t cut it in 2020. Dynamic docs are easy to look through, update, and bookmark.
+
+Sticky contents. No, the navigation bar doesn’t distract nor does it steal precious screen space. Always keep the contents in sight.
+
+Three-column layout. Not used very often, this layout allows you to have another column on the right for the code examples. Of course, this only makes sense if you have a ton of text and want to highlight code so that users don’t have to scroll back and forth or switch between tabs.
+
+hubspot apis
+HubSpot API docs use a three-column layout
+
+Use contrast colors for syntax. Developers spend a lot of time looking at your code examples, so make them readable and separate different components by color.
+
+facebook graph api
+This example from Facebook’s Graph API docs also shows how you can use different tabs to choose between SDKs
+
+Saved scroll state. This is a small detail that any developer will appreciate. You can also use anchor links to specify different sections of the page in case they copy the URL.
+
+Encourage feedback. Your docs are your main marketing tool – if people love them, they will use your API over competitor’s and drive the community around it. The usual “Was this page helpful?” message will let you know how well you’re addressing devs’ questions and the feedback form will be used often as long as you deliver on it.
+
+Don’t abandon your docs
+Outdated docs is the biggest pet peeve of API users. This is also one of the most common mistakes. Developers often write about updates several days after rolling them out, sometimes limiting themselves to a few sentences. This happens because there’s no established process for docs updates and it’s no one’s responsibility. Here’s how to ensure regular and useful doc updates.
+
+Prepare docs prior to the updates. Make it an additional step in your launch plan, don’t roll them out before you have well-written, detailed, and edited paragraphs to introduce your updates.
+
+Regularly remove deprecated data. The docs have to be reviewed often, at least once every few months. User feedback features will let you catch inconsistencies earlier and there should always be a team member responsible for reviewing them and reacting to updates.
+
+Use analytics to improve docs. Standard API analytics will tell you which endpoints are used more often, so you can focus on certain parts of documentation and provide more useful info or create dedicated tutorials. Monitor the use cases your APIs are used for because that will let you widen the value proposition and update the docs with more possibilities.
+
+Great API documentation examples
+There are tons of good docs to explore and learn from. In addition to the examples we’ve shared throughout the article, here are some more for you to enjoy and take note of.
+
+Medium API documentation
+Medium API docs don’t necessarily abide by all rules we’ve listed today, but they are great for the limited functionality this API supports – posting and searching publications on Medium. They are shared on GitHub, have truly short but clear contents with tons of examples, each ending with a transcript of all parameters mentioned in the code, including possible errors. It’s remarkably simple, but reliable – all suggestions can be made directly on GitHub and the docs are regularly updated.
+
+medium api
+Mailchimp API documentation
+Mailchimp realizes that most of its audience are marketing professionals and uses language that enables even non-tech people to understand how to work with its APIs. At a glance, each section follows the same structure:
+
+what an endpoint does and what the guide will let users do
+what you’ll need – any accesses or accounts a user must get first
+what  each function is with a text description, a code example in several languages, and sometimes screenshots of the interface.
+There’s even a copy button for each piece of code – a detail that non-techies will certainly appreciate.
+
+mailchimp api
+Twilio API documentation
+Twilio has famously good API docs. Although docs are just the tip of the iceberg of all the help Twilio shares – there are SDKs in several languages and sample apps for iOS, Android, and web. First of all, they follow the three-column logic with the code directly to the right of the guide. The simplest actions are explained with detail and tons of links for additional information and screenshots. Feedback is also encouraged via a “Rate this page” button and links to the support team and the tag on StackOverflow.
+
+twilio api
+Spotify API documentation
+Although Spotify’s web API docs are very typical, they have a lot of additional information in its Spotify for Developers platform. There are demos for basic functions, mock apps, live examples built using Spotify APIs and widgets, wrappers for different programming languages, and of course, the console. The console is basically an interactive documentation where you can fill your (or sample) data in and explore endpoints live. Powerful products along with a strong knowledge base make Spotify a reliable partner that developers like to work with.
+
+spotify api
+Treat docs with care
+Documentation is the only touchpoint you’ll have with most of your audience, so you need to learn to communicate clearly through it. The best tip here is to make it someone’s job. Often, this is a technical writer who knows how to speak to audiences of different skills, who can translate developers’ words into actionable points, who monitors the timely maintenance and updating of the docs. But managing great documentation is possible even without an expert on your staff. API management tools like Swagger UI, Spotlight, Apiary, and docs specification tools have a broad functionality to help you make docs that developers will love.
+
+Subscribe to our newsletter
+Enter your email
+Yes, I understand and agree to the Privacy Policy
+Share:Share on FacebookTweet about this on TwitterShare on LinkedInComment:2
+2 Comments
+Further Reading
+What is an API: Definition, Types, Specifications, Documentation
+Technical Documentation in Software Development: Types, Best Practices, and Tools
+API Economy: Essentials and the Impact on The Software Business
